@@ -22,6 +22,7 @@ public class PickUpItem : MonoBehaviour
         {
             currentCaseTouch.GetComponent<SpawnGoodCase>().currentCaseTouch++;
             col.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            col.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 }
