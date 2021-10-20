@@ -11515,6 +11515,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 767831331322344912}
   currentItemPickedUp: {fileID: 1540584148}
+  currentCaseTouch: {fileID: 8872170}
 --- !u!50 &4256593762704477675
 Rigidbody2D:
   serializedVersion: 4

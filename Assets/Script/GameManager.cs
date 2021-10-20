@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour
             gameIsOn = true;
             PlateauManager.ResetMap();
             ItemSpawn.instance.ResetBottle();
+            SpawnGoodCase.instance.ResetCase();
             TableauAtoBSystem.instance.ResetPlateau();
             EnemySpawnManager.instance.ResetEnemy();
             EnemySpawnManager.instance.ResetBullet();

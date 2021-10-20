@@ -34,7 +34,6 @@ public class SpawnGoodCase : MonoBehaviour
             GameManager.instance.gameIsOn = false;
             GameManager.score++;
         }
-        Debug.Log(currentCaseTouch + " ..... " + numberOfCase);
     }
 
     public void SpawnAGoodCase()
@@ -62,5 +61,15 @@ public class SpawnGoodCase : MonoBehaviour
 
             //Debug.Log(i);
         }
+    }
+
+    public void ResetCase()
+    {
+        caseGood = GameObject.FindGameObjectsWithTag("GoodCase");
+        foreach (GameObject item in caseGood)
+        {
+            Destroy(item);
+        }
+        currentCaseTouch = 0;
     }
 }
