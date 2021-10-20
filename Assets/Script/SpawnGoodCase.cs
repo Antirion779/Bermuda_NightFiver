@@ -10,9 +10,14 @@ public class SpawnGoodCase : MonoBehaviour
     [SerializeField] private GameObject goodCase;
     [SerializeField] private GameObject player;
 
+    [Header("Variables")]
+    //[SerializeField] private Text numberOfItemText;
+
     private int numberOfCase;
     public int currentCaseTouch = 0;
     public bool tableauIsOn;
+
+    private GameObject[] caseGood;
 
     private void Start()
     {
@@ -27,7 +32,7 @@ public class SpawnGoodCase : MonoBehaviour
 
     public void SpawnAGoodCase()
     {
-        int spawn = Random.Range(4, 7);
+        int spawn = Random.Range(3, 6);
         numberOfCase = 0;
         for (int i = 0; i < spawn; i++)
         {
