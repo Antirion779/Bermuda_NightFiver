@@ -27,7 +27,14 @@ public class SpawnGoodCase : MonoBehaviour
 
     private void Update()
     {
-        
+        if (currentCaseTouch == numberOfCase && tableauIsOn)
+        {
+            currentCaseTouch = 0;
+            tableauIsOn = false;
+            GameManager.instance.gameIsOn = false;
+            GameManager.score++;
+        }
+        Debug.Log(currentCaseTouch + " ..... " + numberOfCase);
     }
 
     public void SpawnAGoodCase()

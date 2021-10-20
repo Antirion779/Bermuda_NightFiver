@@ -180,6 +180,7 @@ public class GameManager : MonoBehaviour
             if(tableau == 6 || modifier1 == 6 || modifier2 == 6)//GoodCase
             {
                 SpawnGoodCase.instance.SpawnAGoodCase();
+                SpawnGoodCase.instance.tableauIsOn = true;
             }
             if (modifier1 == 4 || modifier2 == 4)
             {
