@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
 
             chrono = memoryChrono;
 
-            int tableau = Random.Range(0, 4);
+            int tableau = Random.Range(6, 7);
             int modifier1 = 100;
             int modifier2 = 200;
 
@@ -176,6 +176,10 @@ public class GameManager : MonoBehaviour
                     FallGameManager.instance.isVictory = true;
                     objectifText.text = "Survive";
                 }
+            }
+            if(tableau == 6 || modifier1 == 6 || modifier2 == 6)//GoodCase
+            {
+                SpawnGoodCase.instance.SpawnAGoodCase();
             }
             if (modifier1 == 4 || modifier2 == 4)
             {
