@@ -21,7 +21,7 @@ public class PickUpItem : MonoBehaviour
         else if (col.gameObject.tag == "GoodCase")
         {
             currentCaseTouch.GetComponent<SpawnGoodCase>().currentCaseTouch++;
-            col.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            col.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
             col.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
     }
