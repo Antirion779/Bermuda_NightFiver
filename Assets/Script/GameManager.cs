@@ -172,7 +172,7 @@ public class GameManager : MonoBehaviour
             if(tableau == 3 || modifier1 == 3 || modifier2 == 3)//GoodCase
             {
                 SpawnGoodCase.instance.SpawnAGoodCase();
-                if(tableau == 4)
+                if(tableau == 3)
                 {
                     SpawnGoodCase.instance.tableauIsOn = true;
                     objectifText.text = "Activate the case";
@@ -181,7 +181,7 @@ public class GameManager : MonoBehaviour
             if(tableau == 4 || modifier1 == 4 || modifier2 == 4)//fall thing
             {
                 FallGameManager.instance.SpawnGoodCase();
-                if (tableau == 3)
+                if (tableau == 4)
                 {
                     FallGameManager.instance.isVictory = true;
                     objectifText.text = "Survive";
