@@ -92,16 +92,16 @@ public class GameManager : MonoBehaviour
 
             chrono = memoryChrono;
 
-            int tableau = Random.Range(6, 7);
+            int tableau = Random.Range(0, 5);
             int modifier1 = 100;
             int modifier2 = 200;
 
             if (score > 10)
             {
-                modifier1 = Random.Range(0, 6);
+                modifier1 = Random.Range(0, 7);
                 while (modifier1 == tableau)
                 {
-                    modifier1 = Random.Range(0, 6);
+                    modifier1 = Random.Range(0, 7);
                 }
 
                 int chooseDecor = Random.Range(0, 3);
@@ -178,17 +178,21 @@ public class GameManager : MonoBehaviour
                     objectifText.text = "Survive";
                 }
             }
-            if(tableau == 6 || modifier1 == 6 || modifier2 == 6)//GoodCase
+            if(tableau == 4 || modifier1 == 4 || modifier2 == 4)//GoodCase
             {
                 SpawnGoodCase.instance.SpawnAGoodCase();
-                SpawnGoodCase.instance.tableauIsOn = true;
+                if(tableau == 4)
+                {
+                    SpawnGoodCase.instance.tableauIsOn = true;
+                    objectifText.text = "Activate the case";
+                }
             }
-            if (modifier1 == 4 || modifier2 == 4)
+            if (modifier1 == 5 || modifier2 == 5)
             {
                 speedModifier = 0.5f;
                 tempsDeReaction = 0.5f;
             }
-            if (modifier1 == 5 || modifier2 == 5)
+            if (modifier1 == 6 || modifier2 == 6)
             {
                 LightManager.instance.VariationLight();
 
