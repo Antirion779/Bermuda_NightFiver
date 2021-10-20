@@ -169,22 +169,22 @@ public class GameManager : MonoBehaviour
                     objectifText.text = "Kill the enemies";
                  }
             }
-            if(tableau == 3 || modifier1 == 3 || modifier2 == 3)//fall thing
-            {
-                FallGameManager.instance.SpawnGoodCase();
-                if (tableau == 3)
-                {
-                    FallGameManager.instance.isVictory = true;
-                    objectifText.text = "Survive";
-                }
-            }
-            if(tableau == 4 || modifier1 == 4 || modifier2 == 4)//GoodCase
+            if(tableau == 3 || modifier1 == 3 || modifier2 == 3)//GoodCase
             {
                 SpawnGoodCase.instance.SpawnAGoodCase();
                 if(tableau == 4)
                 {
                     SpawnGoodCase.instance.tableauIsOn = true;
                     objectifText.text = "Activate the case";
+                }
+            }
+            if(tableau == 4 || modifier1 == 4 || modifier2 == 4)//fall thing
+            {
+                FallGameManager.instance.SpawnGoodCase();
+                if (tableau == 3)
+                {
+                    FallGameManager.instance.isVictory = true;
+                    objectifText.text = "Survive";
                 }
             }
             if (modifier1 == 5 || modifier2 == 5)
