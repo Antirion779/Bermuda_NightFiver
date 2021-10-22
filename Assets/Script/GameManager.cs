@@ -84,9 +84,8 @@ public class GameManager : MonoBehaviour
             EnemySpawnManager.instance.killEnemyObjectif = false;
 
 
-            //EnemyToKillManger.instance.ResetEnemy();
-            //EnemyToKillManger.instance.ResetBullet();
-            //EnemyToKillManger.instance.killEnemyObjectif = false;
+            EnemyToKillManger.instance.ResetEnemy();            
+            EnemyToKillManger.instance.killEnemyObjectif = false;
 
 
 
@@ -100,16 +99,16 @@ public class GameManager : MonoBehaviour
 
             chrono = memoryChrono;
 
-            int tableau = Random.Range(5, 6);
+            int tableau = Random.Range(0, 6);
             int modifier1 = 100;
             int modifier2 = 200;
 
             if (score > 10)
             {
-                modifier1 = Random.Range(0, 7);
+                modifier1 = Random.Range(0, 8);
                 while (modifier1 == tableau)
                 {
-                    modifier1 = Random.Range(0, 7);
+                    modifier1 = Random.Range(0, 8);
                 }
 
                 int chooseDecor = Random.Range(0, 3);
@@ -135,10 +134,10 @@ public class GameManager : MonoBehaviour
 
             if (score > 20)
             {
-                modifier2 = Random.Range(0, 6);
+                modifier2 = Random.Range(0, 8);
                 while (modifier2 == tableau || modifier2 == modifier1)
                 {
-                    modifier2 = Random.Range(0, 6);
+                    modifier2 = Random.Range(0, 8);
                 }
             }
             //Debug.Log("RANDOM =" + tableau);
@@ -177,6 +176,15 @@ public class GameManager : MonoBehaviour
                     objectifText.text = "Kill the enemies";
                  }
             }
+            if (tableau == 5 || modifier1 == 5 || modifier2 == 5)//fall thing
+            {
+                EnemyToKillManger.instance.SpawnEnemy();                
+                if (tableau == 5)
+                {
+                    EnemyToKillManger.instance.killEnemyObjectif = true;
+                    objectifText.text = "Kill All The enemies";
+                }
+            }
             if(tableau == 3 || modifier1 == 3 || modifier2 == 3)//GoodCase
             {
                 SpawnGoodCase.instance.SpawnAGoodCase();
@@ -193,17 +201,6 @@ public class GameManager : MonoBehaviour
                 {
                     FallGameManager.instance.isVictory = true;
                     objectifText.text = "Survive";
-                }
-            }
-            if (tableau == 5 || modifier1 == 5 || modifier2 == 5)//fall thing
-            {
-                EnemyToKillManger.instance.SpawnEnemy();
-                EnemyToKillManger.instance.SpawnEnemy2();
-                EnemyToKillManger.instance.SpawnEnemy3();
-                if (tableau == 5)
-                {
-                    
-                    objectifText.text = "Kill All The enemies";
                 }
             }
             if (modifier1 == 6 || modifier2 == 6)

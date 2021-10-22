@@ -23,6 +23,12 @@ public class Bullet : MonoBehaviour
             enemy.TakeDamage(damage);
             Destroy(gameObject);
         }
+        EnemyBis enemybis = hitInfo.GetComponent<EnemyBis>();
+        if (enemybis != null)
+        {
+            enemybis.TakeDamage(damage);
+            Destroy(gameObject);
+        }
 
         GameObject explosion = Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(gameObject, 3.0f);

@@ -55,12 +55,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2027371199324837082}
   - component: {fileID: 2027371199324837085}
-  - component: {fileID: 2027371199324837087}
   - component: {fileID: 2027371199324837084}
   - component: {fileID: 5420300731160570288}
   - component: {fileID: -6574622347854377472}
   - component: {fileID: 4047882255552212333}
   - component: {fileID: 3053373631493449272}
+  - component: {fileID: 4524407093723473568}
   m_Layer: 0
   m_Name: EnemyToKill
   m_TagString: Enemy
@@ -135,19 +135,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2027371199324837087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2027371199324837086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e33a7fad8d1becc4cbd5f7dbad5c8e6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
 --- !u!60 &2027371199324837084
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -384,3 +371,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e47797d8e4d750b4f9074ecf44ef0500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 0}
+  firePoint: {fileID: 0}
+  audioSource: {fileID: 0}
+  player: {fileID: 0}
+  isInLine: 0
+--- !u!114 &4524407093723473568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027371199324837086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df00eb49100656048be92a4da9bbf299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1

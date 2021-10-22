@@ -9,6 +9,8 @@ public class EnemyToKillManger : MonoBehaviour
     [SerializeField]
     GameObject enemy;
 
+    public int nbmenfou;
+    public int nbEnemyRestant;
     public bool killEnemyObjectif;
 
     private GameObject[] enemyInGame;
@@ -21,46 +23,48 @@ public class EnemyToKillManger : MonoBehaviour
             instance = this;
     }
 
+
     public void SpawnEnemy()
     {
-        Vector3 pos = new Vector3(0, 0, 0);
-        int x = 0;
-        int y = 0;
-
-        while (pos == new Vector3(GameManager.positionPlayerX, GameManager.positionPlayerY, 0) || PlateauManager.itemInPlateau[x, y] == true || pos == new Vector3(GameManager.positionPlayerX, y, 0) || pos == new Vector3(x, GameManager.positionPlayerY, 0))
+        int menfou = Random.Range(2, 5);
+        nbEnemyRestant = 0;
+        nbmenfou = menfou;
+        for (int i = 0; i < menfou; i++)
         {
-            x = Random.Range(0, GameManager.taillePlateau);
-            y = Random.Range(0, GameManager.taillePlateau);
-            pos = new Vector3(x, y, 0);
+            Vector3 pos = new Vector3(0, 0, 0);
+            int x = 0;
+            int y = 0;
+
+            while (pos == new Vector3(GameManager.positionPlayerX, GameManager.positionPlayerY, 0) || PlateauManager.itemInPlateau[x, y] == true || pos == new Vector3(GameManager.positionPlayerX, y, 0) || pos == new Vector3(x, GameManager.positionPlayerY, 0))
+            {
+                x = Random.Range(0, GameManager.taillePlateau);
+                y = Random.Range(0, GameManager.taillePlateau);
+                pos = new Vector3(x, y, 0);
+            }
+            Instantiate(enemy, pos, Quaternion.identity);
         }
-        Instantiate(enemy, pos, Quaternion.identity);
+        
     }
-    public void SpawnEnemy2()
+    
+    public void EnemyIsObjectif()
     {
-        Vector3 pos = new Vector3(0, 0, 0);
-        int x = 0;
-        int y = 0;
-
-        while (pos == new Vector3(GameManager.positionPlayerX, GameManager.positionPlayerY, 0) || PlateauManager.itemInPlateau[x, y] == true || pos == new Vector3(GameManager.positionPlayerX, y, 0) || pos == new Vector3(x, GameManager.positionPlayerY, 0))
+        nbEnemyRestant++;
+        if (killEnemyObjectif &&  nbEnemyRestant == nbmenfou)
         {
-            x = Random.Range(0, GameManager.taillePlateau);
-            y = Random.Range(0, GameManager.taillePlateau);
-            pos = new Vector3(x, y, 0);
+            GameManager.instance.gameIsOn = false;
+            GameManager.score++;
         }
-        Instantiate(enemy, pos, Quaternion.identity);
     }
-    public void SpawnEnemy3()
+
+
+    public void ResetEnemy()
     {
-        Vector3 pos = new Vector3(0, 0, 0);
-        int x = 0;
-        int y = 0;
-
-        while (pos == new Vector3(GameManager.positionPlayerX, GameManager.positionPlayerY, 0) || PlateauManager.itemInPlateau[x, y] == true || pos == new Vector3(GameManager.positionPlayerX, y, 0) || pos == new Vector3(x, GameManager.positionPlayerY, 0))
+        enemyInGame = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemyInGame)
         {
-            x = Random.Range(0, GameManager.taillePlateau);
-            y = Random.Range(0, GameManager.taillePlateau);
-            pos = new Vector3(x, y, 0);
+            Destroy(enemy);
         }
-        Instantiate(enemy, pos, Quaternion.identity);
     }
+
+    
 }
