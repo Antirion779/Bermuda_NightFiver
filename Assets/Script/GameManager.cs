@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour
             gameIsOn = true;
             PlateauManager.ResetMap();
             ItemSpawn.instance.ResetBottle();
+            SpawnGoodCase.instance.ResetCase();
             TableauAtoBSystem.instance.ResetPlateau();
             EnemySpawnManager.instance.ResetEnemy();
             EnemySpawnManager.instance.ResetBullet();
@@ -91,16 +92,16 @@ public class GameManager : MonoBehaviour
 
             chrono = memoryChrono;
 
-            int tableau = Random.Range(0, 4);
+            int tableau = Random.Range(0, 5);
             int modifier1 = 100;
             int modifier2 = 200;
 
             if (score > 10)
             {
-                modifier1 = Random.Range(0, 6);
+                modifier1 = Random.Range(0, 7);
                 while (modifier1 == tableau)
                 {
-                    modifier1 = Random.Range(0, 6);
+                    modifier1 = Random.Range(0, 7);
                 }
 
                 int chooseDecor = Random.Range(0, 3);
@@ -168,21 +169,30 @@ public class GameManager : MonoBehaviour
                     objectifText.text = "Kill the enemies";
                  }
             }
-            if(tableau == 3 || modifier1 == 3 || modifier2 == 3)//fall thing
+            if(tableau == 3 || modifier1 == 3 || modifier2 == 3)//GoodCase
+            {
+                SpawnGoodCase.instance.SpawnAGoodCase();
+                if(tableau == 3)
+                {
+                    SpawnGoodCase.instance.tableauIsOn = true;
+                    objectifText.text = "Activate the case";
+                }
+            }
+            if(tableau == 4 || modifier1 == 4 || modifier2 == 4)//fall thing
             {
                 FallGameManager.instance.SpawnGoodCase();
-                if (tableau == 3)
+                if (tableau == 4)
                 {
                     FallGameManager.instance.isVictory = true;
                     objectifText.text = "Survive";
                 }
             }
-            if (modifier1 == 4 || modifier2 == 4)
+            if (modifier1 == 5 || modifier2 == 5)
             {
                 speedModifier = 0.5f;
                 tempsDeReaction = 0.5f;
             }
-            if (modifier1 == 5 || modifier2 == 5)
+            if (modifier1 == 6 || modifier2 == 6)
             {
                 LightManager.instance.VariationLight();
 

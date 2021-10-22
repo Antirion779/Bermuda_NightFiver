@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Jean-Michel/Menu.unity
+    path: Assets/Scenes/Jean-Michel/Menu.unity
     guid: 653479bb77d9c5e46bdd7be2c81793b2
   - enabled: 1
-    path: Assets/Arthur/SceneArthurV2.unity
+    path: Assets/Scenes/Arthur/GAMESCENE.unity
     guid: 3af1837f31c9f2246908357d3904ce64
   - enabled: 1
-    path: Assets/Antoine/GameOver.unity
+    path: Assets/Scenes/Antoine/GameOver.unity
     guid: ba43751bcfd79424bbb02fad18423723
   m_configObjects: {}
