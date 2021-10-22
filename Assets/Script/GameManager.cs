@@ -82,13 +82,6 @@ public class GameManager : MonoBehaviour
             EnemySpawnManager.instance.ResetEnemy();
             EnemySpawnManager.instance.ResetBullet();
             EnemySpawnManager.instance.killEnemyObjectif = false;
-
-
-            EnemyToKillManger.instance.ResetEnemy();            
-            EnemyToKillManger.instance.killEnemyObjectif = false;
-
-
-
             FallGameManager.instance.isVictory = false;
             FallGameManager.instance.ResetExplosion();
             LightManager.instance.ResetLight();
@@ -99,16 +92,16 @@ public class GameManager : MonoBehaviour
 
             chrono = memoryChrono;
 
-            int tableau = Random.Range(0, 6);
+            int tableau = Random.Range(0, 5);
             int modifier1 = 100;
             int modifier2 = 200;
 
             if (score > 10)
             {
-                modifier1 = Random.Range(0, 8);
+                modifier1 = Random.Range(0, 7);
                 while (modifier1 == tableau)
                 {
-                    modifier1 = Random.Range(0, 8);
+                    modifier1 = Random.Range(0, 7);
                 }
 
                 int chooseDecor = Random.Range(0, 3);
@@ -134,10 +127,10 @@ public class GameManager : MonoBehaviour
 
             if (score > 20)
             {
-                modifier2 = Random.Range(0, 8);
+                modifier2 = Random.Range(0, 6);
                 while (modifier2 == tableau || modifier2 == modifier1)
                 {
-                    modifier2 = Random.Range(0, 8);
+                    modifier2 = Random.Range(0, 6);
                 }
             }
             //Debug.Log("RANDOM =" + tableau);
@@ -176,15 +169,6 @@ public class GameManager : MonoBehaviour
                     objectifText.text = "Kill the enemies";
                  }
             }
-            if (tableau == 5 || modifier1 == 5 || modifier2 == 5)//fall thing
-            {
-                EnemyToKillManger.instance.SpawnEnemy();                
-                if (tableau == 5)
-                {
-                    EnemyToKillManger.instance.killEnemyObjectif = true;
-                    objectifText.text = "Kill All The enemies";
-                }
-            }
             if(tableau == 3 || modifier1 == 3 || modifier2 == 3)//GoodCase
             {
                 SpawnGoodCase.instance.SpawnAGoodCase();
@@ -203,12 +187,12 @@ public class GameManager : MonoBehaviour
                     objectifText.text = "Survive";
                 }
             }
-            if (modifier1 == 6 || modifier2 == 6)
+            if (modifier1 == 5 || modifier2 == 5)
             {
                 speedModifier = 0.5f;
                 tempsDeReaction = 0.5f;
             }
-            if (modifier1 == 7 || modifier2 == 7)
+            if (modifier1 == 6 || modifier2 == 6)
             {
                 LightManager.instance.VariationLight();
 
