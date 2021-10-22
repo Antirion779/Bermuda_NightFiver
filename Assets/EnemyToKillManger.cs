@@ -35,4 +35,32 @@ public class EnemyToKillManger : MonoBehaviour
         }
         Instantiate(enemy, pos, Quaternion.identity);
     }
+    public void SpawnEnemy2()
+    {
+        Vector3 pos = new Vector3(0, 0, 0);
+        int x = 0;
+        int y = 0;
+
+        while (pos == new Vector3(GameManager.positionPlayerX, GameManager.positionPlayerY, 0) || PlateauManager.itemInPlateau[x, y] == true || pos == new Vector3(GameManager.positionPlayerX, y, 0) || pos == new Vector3(x, GameManager.positionPlayerY, 0))
+        {
+            x = Random.Range(0, GameManager.taillePlateau);
+            y = Random.Range(0, GameManager.taillePlateau);
+            pos = new Vector3(x, y, 0);
+        }
+        Instantiate(enemy, pos, Quaternion.identity);
+    }
+    public void SpawnEnemy3()
+    {
+        Vector3 pos = new Vector3(0, 0, 0);
+        int x = 0;
+        int y = 0;
+
+        while (pos == new Vector3(GameManager.positionPlayerX, GameManager.positionPlayerY, 0) || PlateauManager.itemInPlateau[x, y] == true || pos == new Vector3(GameManager.positionPlayerX, y, 0) || pos == new Vector3(x, GameManager.positionPlayerY, 0))
+        {
+            x = Random.Range(0, GameManager.taillePlateau);
+            y = Random.Range(0, GameManager.taillePlateau);
+            pos = new Vector3(x, y, 0);
+        }
+        Instantiate(enemy, pos, Quaternion.identity);
+    }
 }

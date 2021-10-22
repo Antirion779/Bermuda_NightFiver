@@ -82,6 +82,14 @@ public class GameManager : MonoBehaviour
             EnemySpawnManager.instance.ResetEnemy();
             EnemySpawnManager.instance.ResetBullet();
             EnemySpawnManager.instance.killEnemyObjectif = false;
+
+
+            //EnemyToKillManger.instance.ResetEnemy();
+            //EnemyToKillManger.instance.ResetBullet();
+            //EnemyToKillManger.instance.killEnemyObjectif = false;
+
+
+
             FallGameManager.instance.isVictory = false;
             FallGameManager.instance.ResetExplosion();
             LightManager.instance.ResetLight();
@@ -190,6 +198,8 @@ public class GameManager : MonoBehaviour
             if (tableau == 5 || modifier1 == 5 || modifier2 == 5)//fall thing
             {
                 EnemyToKillManger.instance.SpawnEnemy();
+                EnemyToKillManger.instance.SpawnEnemy2();
+                EnemyToKillManger.instance.SpawnEnemy3();
                 if (tableau == 5)
                 {
                     

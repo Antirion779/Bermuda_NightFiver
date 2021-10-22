@@ -46,11 +46,7 @@ public class EnemyIaBis : MonoBehaviour
             isInLine = true;
         }
 
-        if (isInLine)
-        {
-            tournerlatetehehe();
-            //Shoot();
-        }
+        
         else
         {
             MoveToPlayer();
@@ -86,6 +82,7 @@ public class EnemyIaBis : MonoBehaviour
                     //Debug.Log("Down");
 
 
+
                     transform.eulerAngles = new Vector3(0, 0, 90);
 
 
@@ -104,6 +101,7 @@ public class EnemyIaBis : MonoBehaviour
                 {
                     transform.position = PlateauManager.plateau[(int)transform.position.x, (int)transform.position.y + 1];
                     //Debug.Log("UP"); 
+                
 
 
                     transform.eulerAngles = new Vector3(0, 0, -90);
@@ -128,7 +126,7 @@ public class EnemyIaBis : MonoBehaviour
                 {
                     transform.position = PlateauManager.plateau[(int)transform.position.x - 1, (int)transform.position.y];
                     //Debug.Log("Gauche");
-                
+
 
 
                     transform.rotation = new Quaternion(0, 0, 0, 0);
@@ -149,6 +147,7 @@ public class EnemyIaBis : MonoBehaviour
                 {
                     transform.position = PlateauManager.plateau[(int)transform.position.x + 1, (int)transform.position.y];
                     //Debug.Log("Droite");
+                
 
 
                     transform.rotation = new Quaternion(0, 0, 180, 0);
@@ -166,47 +165,47 @@ public class EnemyIaBis : MonoBehaviour
 
         StartCoroutine(WaitAction(GameManager.tempsDeReaction));
     }
-    private void tournerlatetehehe()
-    {
-        if (player.transform.position.x - transform.position.x < 0)
-        {
-            transform.rotation = new Quaternion(0, 0, 180, 0);
+    //private void tournerlatetehehe()
+    //{
+    //    if (player.transform.position.x - transform.position.x < 0)
+    //    {
+    //        transform.rotation = new Quaternion(0, 0, 180, 0);
 
-            spriteDeSesMorts.flipX = true;
-            spriteDeSesMorts.flipY = true;
-            animatorDeSesMorts.SetBool("goesUp", false);
-            animatorDeSesMorts.SetBool("goesDown", false);
-            animatorDeSesMorts.SetBool("goesSide", true);
-        }
-        else if (player.transform.position.x - transform.position.x > 0)
-        {
-            transform.rotation = new Quaternion(0, 0, 0, 0);
+    //        spriteDeSesMorts.flipX = true;
+    //        spriteDeSesMorts.flipY = true;
+    //        animatorDeSesMorts.SetBool("goesUp", false);
+    //        animatorDeSesMorts.SetBool("goesDown", false);
+    //        animatorDeSesMorts.SetBool("goesSide", true);
+    //    }
+    //    else if (player.transform.position.x - transform.position.x > 0)
+    //    {
+    //        transform.rotation = new Quaternion(0, 0, 0, 0);
 
-            spriteDeSesMorts.flipX = true;
-            spriteDeSesMorts.flipY = false;
-            animatorDeSesMorts.SetBool("goesUp", false);
-            animatorDeSesMorts.SetBool("goesDown", false);
-            animatorDeSesMorts.SetBool("goesSide", true);
-        }
-        else if (player.transform.position.y - transform.position.y < 0)
-        {
-            transform.eulerAngles = new Vector3(0, 0, -90);
+    //        spriteDeSesMorts.flipX = true;
+    //        spriteDeSesMorts.flipY = false;
+    //        animatorDeSesMorts.SetBool("goesUp", false);
+    //        animatorDeSesMorts.SetBool("goesDown", false);
+    //        animatorDeSesMorts.SetBool("goesSide", true);
+    //    }
+    //    else if (player.transform.position.y - transform.position.y < 0)
+    //    {
+    //        transform.eulerAngles = new Vector3(0, 0, -90);
 
-            spriteDeSesMorts.flipX = true;
-            spriteDeSesMorts.flipY = true;
-            animatorDeSesMorts.SetBool("goesUp", false);
-            animatorDeSesMorts.SetBool("goesDown", true);
-            animatorDeSesMorts.SetBool("goesSide", false);
-        }
-        else if (player.transform.position.y - transform.position.y > 0)
-        {
-            transform.eulerAngles = new Vector3(0, 0, 90);
+    //        spriteDeSesMorts.flipX = true;
+    //        spriteDeSesMorts.flipY = true;
+    //        animatorDeSesMorts.SetBool("goesUp", false);
+    //        animatorDeSesMorts.SetBool("goesDown", true);
+    //        animatorDeSesMorts.SetBool("goesSide", false);
+    //    }
+    //    else if (player.transform.position.y - transform.position.y > 0)
+    //    {
+    //        transform.eulerAngles = new Vector3(0, 0, 90);
 
-            spriteDeSesMorts.flipX = false;
-            spriteDeSesMorts.flipY = true;
-            animatorDeSesMorts.SetBool("goesUp", true);
-            animatorDeSesMorts.SetBool("goesDown", false);
-            animatorDeSesMorts.SetBool("goesSide", false);
-        }
-    }
+    //        spriteDeSesMorts.flipX = false;
+    //        spriteDeSesMorts.flipY = true;
+    //        animatorDeSesMorts.SetBool("goesUp", true);
+    //        animatorDeSesMorts.SetBool("goesDown", false);
+    //        animatorDeSesMorts.SetBool("goesSide", false);
+    //    }
+    //}
 }
