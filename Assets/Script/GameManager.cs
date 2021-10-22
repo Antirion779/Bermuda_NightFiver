@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
 
             chrono = memoryChrono;
 
-            int tableau = Random.Range(0, 5);
+            int tableau = Random.Range(5, 6);
             int modifier1 = 100;
             int modifier2 = 200;
 
@@ -187,12 +187,21 @@ public class GameManager : MonoBehaviour
                     objectifText.text = "Survive";
                 }
             }
-            if (modifier1 == 5 || modifier2 == 5)
+            //if (tableau == 5 || modifier1 == 5 || modifier2 == 5)//fall thing
+            //{
+            //    FallGameManager.instance.SpawnGoodCase();
+            //    if (tableau == 5)
+            //    {
+            //        FallGameManager.instance.isVictory = true;
+            //        objectifText.text = "Survive";
+            //    }
+            //}
+            if (modifier1 == 6 || modifier2 == 6)
             {
                 speedModifier = 0.5f;
                 tempsDeReaction = 0.5f;
             }
-            if (modifier1 == 6 || modifier2 == 6)
+            if (modifier1 == 7 || modifier2 == 7)
             {
                 LightManager.instance.VariationLight();
 
