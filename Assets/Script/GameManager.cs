@@ -187,15 +187,15 @@ public class GameManager : MonoBehaviour
                     objectifText.text = "Survive";
                 }
             }
-            //if (tableau == 5 || modifier1 == 5 || modifier2 == 5)//fall thing
-            //{
-            //    FallGameManager.instance.SpawnGoodCase();
-            //    if (tableau == 5)
-            //    {
-            //        FallGameManager.instance.isVictory = true;
-            //        objectifText.text = "Survive";
-            //    }
-            //}
+            if (tableau == 5 || modifier1 == 5 || modifier2 == 5)//fall thing
+            {
+                EnemyToKillManger.instance.SpawnEnemy();
+                if (tableau == 5)
+                {
+                    
+                    objectifText.text = "Kill All The enemies";
+                }
+            }
             if (modifier1 == 6 || modifier2 == 6)
             {
                 speedModifier = 0.5f;
