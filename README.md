@@ -6,6 +6,14 @@ Bermuda NightFiver is a little 2D game made with Unity by 8 students during the 
 
 You can find it on [Itch.io](https://dratsok.itch.io/bermuda-night-fever) if you want to try it.
 
+## Dev Team
+
+Game Designers : Hugo Costard - Gaëtan Perré
+
+Game Programmers : [Antoine Dirion](https://github.com/Antirion779) - [Arthur Pejoiane](https://github.com/Artyu24) - [Jean-Michel Giverne](https://github.com/DrTheDraGNaK)
+
+Game Art : [Hugo Dobrenel](https://github.com/Dratsok) - [Eliott Pineda](https://github.com/labelettexX)
+
 ## Core Gameplay - Déplacement
 
 
