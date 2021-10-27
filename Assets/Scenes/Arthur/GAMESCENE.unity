@@ -529,6 +529,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &131829501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 131829502}
+  - component: {fileID: 131829503}
+  m_Layer: 0
+  m_Name: CaisseManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &131829502
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131829501}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 549887672}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &131829503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131829501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ba7b16b1baf3ad43871705d41d356ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  caisseItem: {fileID: 5804205045117862016, guid: 62a294068bf7bb445988ed547fc2eecf, type: 3}
+  player: {fileID: 767831331322344910}
+  currentCaisseDestroyed: 0
+  tableauIsOn: 0
 --- !u!1 &153134072
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,6 +708,7 @@ Transform:
   - {fileID: 742806292}
   - {fileID: 53944987}
   - {fileID: 1906647213}
+  - {fileID: 131829502}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1636,10 +1684,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b1a68d6edfc0ae4e88f2abd379d7342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 2027371199324837086, guid: 952b351efd6635c4da52e1fd9d8be80e, type: 3}
-  nbmenfou: 0
-  nbEnemyRestant: 0
-  killEnemyObjectif: 0
 --- !u!1 &2137943155
 GameObject:
   m_ObjectHideFlags: 0
