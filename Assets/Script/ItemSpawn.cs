@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -55,6 +56,7 @@ public class ItemSpawn : MonoBehaviour
                 Instantiate(item, pos, Quaternion.identity);
                 PlateauManager.itemInPlateau[x, y] = true;
                 numberOfItem++;
+                Debug.Log("Spanw a caisse");
             }
         
             else
