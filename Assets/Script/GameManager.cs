@@ -85,6 +85,7 @@ public class GameManager : MonoBehaviour
             FallGameManager.instance.isVictory = false;
             FallGameManager.instance.ResetExplosion();
             LightManager.instance.ResetLight();
+            CaisseManager.instance.ResetCaisse();
 
             speedModifier = 1;
             tempsDeReaction = 1;
@@ -92,7 +93,7 @@ public class GameManager : MonoBehaviour
 
             chrono = memoryChrono;
 
-            int tableau = Random.Range(0, 5);
+            int tableau = Random.Range(0, 6);
             int modifier1 = 100;
             int modifier2 = 200;
 
@@ -180,11 +181,21 @@ public class GameManager : MonoBehaviour
             }
             if(tableau == 4 || modifier1 == 4 || modifier2 == 4)//fall thing
             {
+                Debug.Log("Caisse Game");
                 FallGameManager.instance.SpawnGoodCase();
                 if (tableau == 4)
                 {
                     FallGameManager.instance.isVictory = true;
                     objectifText.text = "Survive";
+                }
+            }
+            if (tableau == 5 || modifier1 == 7 || modifier2 == 7)//Destroy every caisse
+            {
+                CaisseManager.instance.SpawnSomeCaisse();
+                if (tableau == 5)
+                {
+                    CaisseManager.instance.tableauIsOn = true;
+                    objectifText.text = "Destroy every Box";
                 }
             }
             if (modifier1 == 5 || modifier2 == 5)
@@ -201,6 +212,7 @@ public class GameManager : MonoBehaviour
                     LightManager.instance.ActivateEnemyLight();
                 }
             }
+            
         }
     }
 
